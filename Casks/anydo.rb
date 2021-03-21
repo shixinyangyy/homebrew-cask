@@ -9,11 +9,18 @@ cask "anydo" do
 
   livecheck do
     url "https://electron-app.any.do/latest-mac.yml"
-    strategy :page_match
-    regex(/version: (\d+(?:\.\d+)*)/i)
+    strategy :page_match do |page|
+      YAML.safe_load(page)["version"]
+    end
   end
 
   depends_on macos: ">= :catalina"
 
   app "Any.do.app"
+
+  zap trash: [
+    "~/Library/Application Support/@anydo",
+    "~/Library/Preferences/com.anydo.mac.plist",
+    "~/Library/Saved Application State/com.anydo.mac.savedState",
+  ]
 end
