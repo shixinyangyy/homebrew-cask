@@ -1,6 +1,6 @@
 cask "wechatwebdevtools" do
-  version "1.05.2103190"
-  sha256 "6b57f96c4031ff3568303e85011d24b6b14b544990411ab5781374e3922b4d25"
+  version "1.05.2105100"
+  sha256 "cadaf941663783d78fd28c04ff80e2678ad237d288b2ccdd41673914c091c23c"
 
   url "https://dldir1.qq.com/WechatWebDev/release/p-ae42ee2cde4d42ee80ac60b35f183a99/wechat_devtools_#{version}.dmg"
   name "wechat web devtools"
@@ -10,8 +10,7 @@ cask "wechatwebdevtools" do
 
   livecheck do
     url "https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html"
-    strategy :page_match
-    regex(%r{Stable Build</a>\s*\((\d+(?:\.\d+)*)}i)
+    regex(%r{Stable\s+Build</a>\s*\((\d+(?:\.\d+)+)}i)
   end
 
   auto_updates true

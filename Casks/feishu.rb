@@ -1,8 +1,8 @@
 cask "feishu" do
-  version "3.46.9,061e09"
-  sha256 "c49a282d163f1ff7453819537551ef82cffca69c19bcefb41936a0524168b19a"
+  version "4.0.10,5a5966"
+  sha256 "f0a7435c2459d86efbf39a882c89df3ecc8bc5029c5e7a73946c1a6a9a1ababc"
 
-  url "https://sf3-cn.feishucdn.com/obj/ee-appcenter/#{version.after_comma}/feishu-mac-#{version.before_comma}.dmg",
+  url "https://sf3-cn.feishucdn.com/obj/ee-appcenter/#{version.after_comma}/Feishu-darwin_x64-#{version.before_comma}-signed.dmg",
       verified: "sf3-cn.feishucdn.com/"
   name "feishu"
   desc "Project management software"
@@ -11,7 +11,7 @@ cask "feishu" do
   livecheck do
     url "https://www.feishu.cn/api/downloads"
     strategy :page_match do |page|
-      match = page.match(%r{sf3-cn\.feishucdn\.com/obj/ee-appcenter/(\w+)/feishu-mac-(\d+(?:\.\d+)*)\.dmg}i)
+      match = page.match(%r{/(\h+)/Feishu-darwin_x64-(\d+(?:\.\d+)*)-signed\.dmg}i)
       "#{match[2]},#{match[1]}"
     end
   end
