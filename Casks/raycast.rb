@@ -1,5 +1,5 @@
 cask "raycast" do
-  version "1.17.1"
+  version "1.18.0"
   sha256 :no_check
 
   url "https://api.raycast.app/v2/download"
@@ -20,6 +20,7 @@ cask "raycast" do
   zap trash: [
     "~/Library/Application Support/com.raycast.macos",
     "~/Library/Caches/com.raycast.macos",
+    "~/Library/Cookies/com.raycast.macos.binarycookies",
     "~/Library/Preferences/com.raycast.macos.plist",
   ]
 end
