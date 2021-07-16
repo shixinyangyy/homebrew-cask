@@ -1,6 +1,6 @@
 cask "videofusion" do
-  version "1.3.1.6.0"
-  sha256 "253ed831d484d9c3ca87d759ba0a144a2c982415159123b7c75bdb02aa6be0ca"
+  version "1.4.0.1106.0"
+  sha256 "222eb5457d4825cdc0611c3222d6831bc6660c7d20943f0747fffee9be1f3275"
 
   url "https://lf3-faceucdn-tos.pstatp.com/obj/faceu-packages/Jianying_#{version.dots_to_underscores}.pkg",
       verified: "lf3-faceucdn-tos.pstatp.com/obj/faceu-packages/"
@@ -10,7 +10,10 @@ cask "videofusion" do
   homepage "https://lv.ulikecam.com/"
 
   livecheck do
-    skip "No version information available"
+    url "https://lf3-beecdn.bytetos.com/obj/ies-fe-bee/bee_prod/biz_80/bee_prod_80_bee_publish_3563.json"
+    strategy :page_match do |page|
+      JSON.parse(page)["mac_download_pkg"]["channel_default"][/(\d+(?:_\d+)+)\.pkg/i, 1].tr("_", ".")
+    end
   end
 
   depends_on macos: ">= :mojave"

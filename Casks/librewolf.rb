@@ -1,7 +1,7 @@
 cask "librewolf" do
   if Hardware::CPU.intel?
-    version "89.0.1-1,49443567873da35b2a6523fef6e214a5"
-    sha256 "a9695cc5be846e7e9fb023b680a9273d84f3b079475a1277219c1aed374f1f05"
+    version "90.0-1,1ca61f5021197d9ff14a29b757ec5eed"
+    sha256 "838ada1887e4252fd16a147a250309eec3c747fcb97374d19bc771121919dc1b"
 
     url "https://gitlab.com/librewolf-community/browser/macos/uploads/#{version.after_comma}/librewolf-#{version.before_comma}.dmg",
         verified: "gitlab.com/librewolf-community/browser/macos/"
@@ -16,8 +16,8 @@ cask "librewolf" do
       end
     end
   else
-    version "89.0.1-1,d85200e90e304685067e840e6a8cb9d6"
-    sha256 "afa80fe07f1244e79a870de5d13e3783e1763e23f7e7e535f0e172e1cf84893f"
+    version "90.0-1,b7d58f8478e79cfdedaaf8b1c6ce04f5"
+    sha256 "1883f262a0c85a595cf4417a0e9928fc37129967d52f5c2beffc931e350be177"
 
     url "https://gitlab.com/librewolf-community/browser/macos/uploads/#{version.after_comma}/librewolf-#{version.before_comma}_aarch64_exp.dmg",
         verified: "gitlab.com/librewolf-community/browser/macos/"

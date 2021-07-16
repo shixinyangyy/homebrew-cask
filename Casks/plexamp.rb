@@ -1,9 +1,16 @@
 cask "plexamp" do
-  version "3.4.7"
-  sha256 "d2384a493a08f07fe8fe7f185cda5080a54a9b9dc9c50c639e3a01974a13fb7a"
+  version "3.5.0"
 
-  url "https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-#{version}.dmg",
-      verified: "plexamp.plex.tv/"
+  if Hardware::CPU.intel?
+    sha256 "6eff736103de0ed89d81600f82e541deecc5f8d76d878320b41ad87ffe4bd87d"
+    url "https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-#{version}.dmg",
+        verified: "plexamp.plex.tv/"
+  else
+    sha256 "ead85dd518814718ce57b47a2cf76d0f290a9fd6465c88369d33964a67dbb76d"
+    url "https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-#{version}-arm64.dmg",
+        verified: "plexamp.plex.tv/"
+  end
+
   name "Plexamp"
   desc "Music player focusing on visuals"
   homepage "https://plexamp.com/"

@@ -1,12 +1,12 @@
 cask "intellij-idea" do
-  version "2021.1.2,211.7442.40"
+  version "2021.1.3,211.7628.21"
 
   if Hardware::CPU.intel?
-    sha256 "3e2dcb9e4c91cf5dcd28b2ce1eede51d2fbb0111c669f981551c3dc296ec825b"
+    sha256 "156f5f12ae5c45b6d3c0b72af9105cdb6a610b0e7dfb32f26686f74b9bcf5ed4"
 
     url "https://download.jetbrains.com/idea/ideaIU-#{version.before_comma}.dmg"
   else
-    sha256 "b02f12c7725ee907b32b7037300e0a50aeb7ce7509016ab254851a0f25516850"
+    sha256 "a2e722e4a2d2ebc44851b6106f024bc27e15de70b7276bda15f1aa090b1a109a"
 
     url "https://download.jetbrains.com/idea/ideaIU-#{version.before_comma}-aarch64.dmg"
   end
@@ -40,10 +40,11 @@ cask "intellij-idea" do
 
   zap trash: [
     "~/Library/Preferences/com.jetbrains.intellij.plist",
-    "~/Library/Caches/IntelliJIdea#{version.major_minor}",
-    "~/Library/Logs/IntelliJIdea#{version.major_minor}",
-    "~/Library/Application Support/IntelliJIdea#{version.major_minor}",
+    "~/Library/Preferences/jetbrains.idea.*.plist",
     "~/Library/Preferences/IntelliJIdea#{version.major_minor}",
+    "~/Library/Caches/JetBrains/IntelliJIdea#{version.major_minor}",
+    "~/Library/Logs/JetBrains/IntelliJIdea#{version.major_minor}",
+    "~/Library/Application Support/JetBrains/IntelliJIdea#{version.major_minor}",
     "~/Library/Saved Application State/com.jetbrains.intellij.savedState",
   ]
 end
