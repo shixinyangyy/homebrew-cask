@@ -1,6 +1,6 @@
 cask "sketch" do
-  version "73.1,127209"
-  sha256 "4a23a537c608c392f59150f10a315f237e7f8cfed0a8baae01c051a1a4fe20cc"
+  version "74.1,128920"
+  sha256 "7ab2c3677340385936ba312b2006408c1793f40ae84ae8680855f07a12a033e4"
 
   url "https://download.sketchapp.com/sketch-#{version.before_comma}-#{version.after_comma}.zip"
   name "Sketch"
