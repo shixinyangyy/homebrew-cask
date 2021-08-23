@@ -1,11 +1,11 @@
 cask "exodus" do
-  version "21.8.5"
+  version "21.8.19"
 
   if Hardware::CPU.intel?
-    sha256 "a43b36bd40d5ce093093d903bddfac9e49ec3a018ef9f3ed654a926a50f6c142"
+    sha256 "e9da3d433aeaa5857721c4d11f4e58756cd28a10ecce763a7627b284cd876bef"
     url "https://downloads.exodus.com/releases/exodus-macos-#{version}.dmg"
   else
-    sha256 "f9384363c50abeeb72d3a1eed9fc4ac71d587f287b0047b1a962fdd4cc20708b"
+    sha256 "c9f5784a74d121390c4dae8f8f35894a6fa424ed7f163510ee6b3c41ac66894e"
     url "https://downloads.exodus.com/releases/exodus-macos-arm64-#{version}.dmg"
   end
 

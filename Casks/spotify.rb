@@ -1,12 +1,12 @@
 cask "spotify" do
   if Hardware::CPU.intel?
-    version "1.1.65.643.g2d707698,1.1.65.643.g2d707698-28"
+    version "1.1.66.578.gc54d0f69,1.1.66.578.gc54d0f69-15"
     sha256 :no_check
 
     url "https://download.scdn.co/Spotify.dmg",
         verified: "scdn.co/"
   else
-    version "1.1.63.488.g27383f12,1.1.63.488.g27383f12-868"
+    version "1.1.66.578.gc54d0f69"
     sha256 :no_check
 
     url "https://download.scdn.co/SpotifyBetaARM64.dmg",
